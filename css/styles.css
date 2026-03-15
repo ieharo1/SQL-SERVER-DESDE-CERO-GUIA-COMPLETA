@@ -475,6 +475,47 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom .developer-info {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom .developer-contact {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom .developer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom .developer-contact a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-bottom .developer-contact a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.footer-bottom .copyright {
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-top: 1rem;
+}
+
 /* Animaciones */
 @keyframes fadeInUp {
     from {
