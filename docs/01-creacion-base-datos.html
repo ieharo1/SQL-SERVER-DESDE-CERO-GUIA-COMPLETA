@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Creación de Bases de Datos | SQL Server desde Cero</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .doc-header {
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 60px;
+        }
+        .doc-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .doc-section {
+            margin-bottom: 40px;
+        }
+        .doc-section h2 {
+            color: #0078d4;
+            border-bottom: 2px solid #e1dfdd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .code-example {
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .code-header {
+            background: #2d2d2d;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .code-header span {
+            color: #9cdcfe;
+            font-size: 0.9rem;
+        }
+        .copy-btn {
+            background: #0078d4;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .copy-btn:hover {
+            background: #005a9e;
+        }
+        .code-example pre {
+            margin: 0;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        .code-example code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: #d4d4d4;
+            line-height: 1.6;
+        }
+        .note {
+            background: #e8f4fd;
+            border-left: 4px solid #0078d4;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning {
+            background: #fff8e6;
+            border-left: 4px solid #ffb900;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #0078d4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .nav-docs {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #e1dfdd;
+        }
+        .nav-docs a {
+            color: #0078d4;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #0078d4;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .nav-docs a:hover {
+            background: #0078d4;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <span class="logo-icon">📊</span>
+                    <span class="logo-text">SQL Server desde Cero</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#temas">Temas</a></li>
+                    <li><a href="../index.html#ejemplos">Ejemplos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Doc Header -->
+    <section class="doc-header">
+        <div class="container">
+            <h1>Creación de Bases de Datos</h1>
+            <p>Aprende a crear y configurar bases de datos en SQL Server</p>
+        </div>
+    </section>
+
+    <!-- Doc Content -->
+    <section class="doc-content">
+        <a href="../index.html" class="back-link">← Volver al inicio</a>
+
+        <!-- Introducción -->
+        <div class="doc-section">
+            <h2>Introducción</h2>
+            <p>Una base de datos en SQL Server es una colección organizada de datos que se almacenan y acceden electrónicamente desde un sistema informático. En esta lección aprenderás los fundamentos para crear y configurar bases de datos.</p>
+            
+            <div class="note">
+                <strong>💡 Nota:</strong> SQL Server utiliza el lenguaje T-SQL (Transact-SQL) para la gestión de bases de datos.
+            </div>
+        </div>
+
+        <!-- Sintaxis Básica -->
+        <div class="doc-section">
+            <h2>Sintaxis Básica</h2>
+            <p>La instrucción <code>CREATE DATABASE</code> es la forma más simple de crear una base de datos:</p>
+            
+            <div class="code-example">
+                <div class="code-header">
+                    <span>SQL</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                </div>
+                <pre><code class="language-sql">-- Crear una base de datos simple
+CREATE DATABASE MiBaseDeDatos;
+GO
+
+-- Usar la base de datos creada
+USE MiBaseDeDatos;
+GO</code></pre>
+            </div>
+        </div>
+
+        <!-- Creación con Opciones -->
+        <div class="doc-section">
+            <h2>Creación con Opciones Avanzadas</h2>
+            <p>Puedes especificar archivos de datos, logs y otras opciones:</p>
+            
+            <div class="code-example">
+                <div class="code-header">
+                    <span>SQL</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                </div>
+                <pre><code class="language-sql">CREATE DATABASE VentasEmpresa
+ON PRIMARY 
+(
+    NAME = Ventas_Data,
+    FILENAME = 'C:\SQLData\VentasEmpresa.mdf',
+    SIZE = 10MB,
+    MAXSIZE = 100MB,
+    FILEGROWTH = 5MB
+)
+LOG ON 
+(
+    NAME = Ventas_Log,
+    FILENAME = 'C:\SQLData\VentasEmpresa.ldf',
+    SIZE = 5MB,
+    MAXSIZE = 50MB,
+    FILEGROWTH = 1MB
+);
+GO</code></pre>
+            </div>
+        </div>
+
+        <!-- Verificar Base de Datos -->
+        <div class="doc-section">
+            <h2>Verificar Bases de Datos Existentes</h2>
+            
+            <div class="code-example">
+                <div class="code-header">
+                    <span>SQL</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                </div>
+                <pre><code class="language-sql">-- Listar todas las bases de datos
+SELECT name, database_id, create_date 
+FROM sys.databases 
+ORDER BY name;
+
+-- Verificar si una base de datos existe
+IF DB_ID('MiBaseDeDatos') IS NOT NULL
+    PRINT 'La base de datos existe';
+ELSE
+    PRINT 'La base de datos no existe';
+
+-- Crear solo si no existe
+IF NOT EXISTS (SELECT 1 FROM sys.databases WHERE name = 'MiBaseDeDatos')
+BEGIN
+    CREATE DATABASE MiBaseDeDatos;
+    PRINT 'Base de datos creada exitosamente';
+END
+ELSE
+BEGIN
+    PRINT 'La base de datos ya existe';
+END
+GO</code></pre>
+            </div>
+        </div>
+
+        <!-- Modificar Base de Datos -->
+        <div class="doc-section">
+            <h2>Modificar una Base de Datos</h2>
+            
+            <div class="code-example">
+                <div class="code-header">
+                    <span>SQL</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                </div>
+                <pre><code class="language-sql">-- Cambiar nombre de la base de datos
+ALTER DATABASE MiBaseDeDatos 
+MODIFY NAME = NuevaBaseDeDatos;
+GO
+
+-- Agregar un archivo de datos adicional
+ALTER DATABASE VentasEmpresa
+ADD FILE 
+(
+    NAME = Ventas_Data2,
+    FILENAME = 'C:\SQLData\VentasEmpresa2.ndf',
+    SIZE = 10MB,
+    MAXSIZE = 50MB,
+    FILEGROWTH = 5MB
+);
+GO
+
+-- Cambiar opciones de recuperación
+ALTER DATABASE VentasEmpresa 
+SET RECOVERY FULL;
+GO</code></pre>
+            </div>
+        </div>
+
+        <!-- Eliminar Base de Datos -->
+        <div class="doc-section">
+            <h2>Eliminar una Base de Datos</h2>
+            
+            <div class="warning">
+                <strong>⚠️ Advertencia:</strong> La instrucción DROP DATABASE elimina permanentemente la base de datos y todos sus datos. ¡Usa con precaución!
+            </div>
+            
+            <div class="code-example">
+                <div class="code-header">
+                    <span>SQL</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                </div>
+                <pre><code class="language-sql">-- Eliminar una base de datos
+DROP DATABASE MiBaseDeDatos;
+GO
+
+-- Eliminar solo si existe (SQL Server 2016+)
+DROP DATABASE IF EXISTS MiBaseDeDatos;
+GO</code></pre>
+            </div>
+        </div>
+
+        <!-- Ejercicio Práctico -->
+        <div class="doc-section">
+            <h2>Ejercicio Práctico</h2>
+            <p>Crea una base de datos para un sistema de biblioteca:</p>
+            
+            <div class="code-example">
+                <div class="code-header">
+                    <span>SQL - Ejercicio</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                </div>
+                <pre><code class="language-sql">-- 1. Crea una base de datos llamada 'Biblioteca'
+-- 2. Verifica que fue creada
+-- 3. Cambia a esa base de datos
+-- 4. Lista todas las bases de datos del servidor
+
+-- Solución:
+CREATE DATABASE Biblioteca;
+GO
+
+SELECT name FROM sys.databases WHERE name = 'Biblioteca';
+GO
+
+USE Biblioteca;
+GO
+
+SELECT name FROM sys.databases ORDER BY name;
+GO</code></pre>
+            </div>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-docs">
+            <a href="../index.html#temas">← Tema Anterior</a>
+            <a href="02-tablas.html">Siguiente Tema: Tablas →</a>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

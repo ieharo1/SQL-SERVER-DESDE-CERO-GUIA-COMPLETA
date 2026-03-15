@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Server desde Cero - Guía Completa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <span class="logo-icon">📊</span>
+                    <span class="logo-text">SQL Server desde Cero</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#que-es">¿Qué es?</a></li>
+                    <li><a href="#arquitectura">Arquitectura</a></li>
+                    <li><a href="#temas">Temas</a></li>
+                    <li><a href="#ejemplos">Ejemplos</a></li>
+                </ul>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>Aprende SQL Server desde Cero</h1>
+            <p class="hero-subtitle">Guía completa para dominar el sistema de gestión de bases de datos más popular de Microsoft</p>
+            <div class="hero-buttons">
+                <a href="#que-es" class="btn btn-primary">Comenzar</a>
+                <a href="#ejemplos" class="btn btn-secondary">Ver Ejemplos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Qué es SQL Server? -->
+    <section id="que-es" class="section">
+        <div class="container">
+            <h2>¿Qué es SQL Server?</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-icon">🖥️</div>
+                    <h3>Sistema de Gestión de Bases de Datos</h3>
+                    <p>SQL Server es un Sistema de Gestión de Bases de Datos Relacional (RDBMS) desarrollado por Microsoft. Almacena y recupera datos solicitados por otras aplicaciones de software.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">🔗</div>
+                    <h3>Basado en SQL</h3>
+                    <p>Utiliza T-SQL (Transact-SQL), la implementación de Microsoft del lenguaje SQL estándar, para consultar y manipular datos.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">🏢</div>
+                    <h3>Enterprise Ready</h3>
+                    <p>Ofrece características avanzadas para empresas: alta disponibilidad, seguridad, business intelligence y análisis de datos.</p>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>SQL Server fue lanzado por primera vez en 1989 y ha evolucionado hasta convertirse en una plataforma completa que incluye servicios de integración, análisis y reportes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arquitectura -->
+    <section id="arquitectura" class="section section-alt">
+        <div class="container">
+            <h2>Arquitectura de SQL Server</h2>
+            <p class="section-intro">SQL Server tiene una arquitectura en capas que separa los componentes lógicos de los físicos.</p>
+            
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <h4>Capa de Aplicación</h4>
+                    <p>Aplicaciones cliente, SSMS, aplicaciones web</p>
+                </div>
+                <div class="arch-arrow">⬇️</div>
+                <div class="arch-layer">
+                    <h4>Capa de Conexión</h4>
+                    <p>Protocolos de red (TCP/IP, Named Pipes)</p>
+                </div>
+                <div class="arch-arrow">⬇️</div>
+                <div class="arch-layer">
+                    <h4>Relacional Engine</h4>
+                    <p>Query Parser, Optimizer, Executor</p>
+                </div>
+                <div class="arch-arrow">⬇️</div>
+                <div class="arch-layer">
+                    <h4>Storage Engine</h4>
+                    <p>Gestión de datos en disco y memoria</p>
+                </div>
+            </div>
+
+            <div class="components-grid">
+                <div class="component-card">
+                    <h4>📋 Base de Datos</h4>
+                    <ul>
+                        <li>Archivos de datos (.mdf, .ndf)</li>
+                        <li>Archivos de log (.ldf)</li>
+                        <li>Filegroups</li>
+                    </ul>
+                </div>
+                <div class="component-card">
+                    <h4>🔧 Motor de Base de Datos</h4>
+                    <ul>
+                        <li>Procesamiento de consultas</li>
+                        <li>Gestión de transacciones</li>
+                        <li>Control de concurrencia</li>
+                    </ul>
+                </div>
+                <div class="component-card">
+                    <h4>🛡️ Servicios Adicionales</h4>
+                    <ul>
+                        <li>SQL Server Integration Services (SSIS)</li>
+                        <li>SQL Server Analysis Services (SSAS)</li>
+                        <li>SQL Server Reporting Services (SSRS)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temas -->
+    <section id="temas" class="section">
+        <div class="container">
+            <h2>Contenido del Curso</h2>
+            <div class="topics-grid">
+                <div class="topic-card" data-topic="1">
+                    <div class="topic-number">01</div>
+                    <h3>Creación de Bases de Datos</h3>
+                    <p>Aprende a crear y configurar bases de datos en SQL Server.</p>
+                    <a href="docs/01-creacion-base-datos.html" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="2">
+                    <div class="topic-number">02</div>
+                    <h3>Tablas</h3>
+                    <p>Diseño y creación de tablas con diferentes tipos de datos.</p>
+                    <a href="docs/02-tablas.html" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="3">
+                    <div class="topic-number">03</div>
+                    <h3>Consultas SELECT</h3>
+                    <p>Recuperación de datos con consultas SELECT básicas y avanzadas.</p>
+                    <a href="docs/03-consultas-select.html" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="4">
+                    <div class="topic-number">04</div>
+                    <h3>JOIN</h3>
+                    <p>Combinación de datos de múltiples tablas con diferentes tipos de JOIN.</p>
+                    <a href="docs/04-join.html" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="5">
+                    <div class="topic-number">05</div>
+                    <h3>Índices</h3>
+                    <p>Optimización de consultas mediante índices estratégicos.</p>
+                    <a href="docs/05-indices.html" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="6">
+                    <div class="topic-number">06</div>
+                    <h3>Stored Procedures</h3>
+                    <p>Creación de procedimientos almacenados reutilizables.</p>
+                    <a href="docs/06-stored-procedures.html" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="7">
+                    <div class="topic-number">07</div>
+                    <h3>Triggers</h3>
+                    <p>Disparadores automáticos para mantener integridad de datos.</p>
+                    <a href="docs/07-triggers.html" class="topic-link">Ver tema →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejemplos -->
+    <section id="ejemplos" class="section section-alt">
+        <div class="container">
+            <h2>Ejemplos de Código</h2>
+            <div class="examples-container">
+                <div class="example-card">
+                    <h4>Crear Base de Datos</h4>
+                    <pre><code class="language-sql">CREATE DATABASE MiBaseDeDatos;
+GO
+
+USE MiBaseDeDatos;
+GO</code></pre>
+                </div>
+                <div class="example-card">
+                    <h4>Crear Tabla</h4>
+                    <pre><code class="language-sql">CREATE TABLE Empleados (
+    EmpleadoID INT PRIMARY KEY IDENTITY,
+    Nombre NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(255) UNIQUE,
+    Salario DECIMAL(10,2),
+    FechaContratacion DATE DEFAULT GETDATE()
+);</code></pre>
+                </div>
+                <div class="example-card">
+                    <h4>Consulta SELECT</h4>
+                    <pre><code class="language-sql">SELECT Nombre, Email, Salario
+FROM Empleados
+WHERE Salario > 50000
+ORDER BY Salario DESC;</code></pre>
+                </div>
+                <div class="example-card">
+                    <h4>INNER JOIN</h4>
+                    <pre><code class="language-sql">SELECT e.Nombre, d.NombreDepartamento
+FROM Empleados e
+INNER JOIN Departamentos d ON e.DepartamentoID = d.DepartamentoID;</code></pre>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="examples/ejemplos-completos.html" class="btn btn-primary">Ver más ejemplos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SQL Server desde Cero</h4>
+                    <p>Guía educativa completa para aprender SQL Server desde los fundamentos hasta conceptos avanzados.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#que-es">¿Qué es?</a></li>
+                        <li><a href="#temas">Temas</a></li>
+                        <li><a href="#ejemplos">Ejemplos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="docs/">Documentación</a></li>
+                        <li><a href="examples/">Ejemplos</a></li>
+                        <li><a href="https://docs.microsoft.com/sql/" target="_blank">Docs Oficiales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SQL Server desde Cero. Proyecto Educativo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
