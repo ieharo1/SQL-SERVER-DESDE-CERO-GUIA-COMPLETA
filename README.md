@@ -314,3 +314,4 @@ SELECT * FROM NombreTabla WHERE Columna LIKE '%valor%';
 ---
 
 © 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.
+
