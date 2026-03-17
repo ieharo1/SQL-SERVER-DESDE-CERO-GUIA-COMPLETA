@@ -137,45 +137,218 @@
             <div class="topics-grid">
                 <div class="topic-card" data-topic="1">
                     <div class="topic-number">01</div>
-                    <h3>Creación de Bases de Datos</h3>
-                    <p>Aprende a crear y configurar bases de datos en SQL Server.</p>
-                    <a href="docs/01-creacion-base-datos.html" class="topic-link">Ver tema →</a>
+                    <h3>Introducción</h3>
+                    <p>Conceptos básicos de SQL Server, instalación y configuración inicial.</p>
+                    <a href="#tema1-1" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="2">
                     <div class="topic-number">02</div>
-                    <h3>Tablas</h3>
-                    <p>Diseño y creación de tablas con diferentes tipos de datos.</p>
-                    <a href="docs/02-tablas.html" class="topic-link">Ver tema →</a>
+                    <h3>Instalación</h3>
+                    <p>Instalación de SQL Server Express y SSMS en Windows.</p>
+                    <a href="#tema1-2" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="3">
                     <div class="topic-number">03</div>
-                    <h3>Consultas SELECT</h3>
-                    <p>Recuperación de datos con consultas SELECT básicas y avanzadas.</p>
-                    <a href="docs/03-consultas-select.html" class="topic-link">Ver tema →</a>
+                    <h3>Conceptos básicos</h3>
+                    <p>Creación de bases de datos, tablas y tipos de datos.</p>
+                    <a href="#tema1-3" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="4">
                     <div class="topic-number">04</div>
-                    <h3>JOIN</h3>
-                    <p>Combinación de datos de múltiples tablas con diferentes tipos de JOIN.</p>
-                    <a href="docs/04-join.html" class="topic-link">Ver tema →</a>
+                    <h3>Consultas T-SQL</h3>
+                    <p>SELECT, INSERT, UPDATE, DELETE y funciones de agregación.</p>
+                    <a href="#tema2-1" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="5">
                     <div class="topic-number">05</div>
-                    <h3>Índices</h3>
-                    <p>Optimización de consultas mediante índices estratégicos.</p>
-                    <a href="docs/05-indices.html" class="topic-link">Ver tema →</a>
+                    <h3>Buenas prácticas</h3>
+                    <p>Índices, optimización y diseño de esquemas eficientes.</p>
+                    <a href="#tema2-2" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="6">
                     <div class="topic-number">06</div>
-                    <h3>Stored Procedures</h3>
-                    <p>Creación de procedimientos almacenados reutilizables.</p>
-                    <a href="docs/06-stored-procedures.html" class="topic-link">Ver tema →</a>
+                    <h3>Casos reales</h3>
+                    <p>Stored procedures, triggers y transacciones.</p>
+                    <a href="#tema3-1" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="7">
                     <div class="topic-number">07</div>
-                    <h3>Triggers</h3>
-                    <p>Disparadores automáticos para mantener integridad de datos.</p>
-                    <a href="docs/07-triggers.html" class="topic-link">Ver tema →</a>
+                    <h3>Proyecto final</h3>
+                    <p>Base de datos completa para aplicación empresarial.</p>
+                    <a href="#tema3-2" class="topic-link">Ver tema →</a>
+                </div>
+            </div>
+
+            <!-- Contenido Detallado de Temas -->
+            <div class="topic-content-container">
+                <div class="content-detail" id="tema1-1">
+                    <h3>📊 Introducción a SQL Server</h3>
+                    <div class="content-body">
+                        <p><strong>SQL Server</strong> es un Sistema de Gestión de Bases de Datos Relacional (RDBMS) desarrollado por Microsoft. Utiliza T-SQL (Transact-SQL) para consultar y manipular datos.</p>
+                        <h4>Historia:</h4>
+                        <p>SQL Server fue lanzado por primera vez en 1989 y ha evolucionado hasta convertirse en una plataforma completa que incluye servicios de integración, análisis y reportes.</p>
+                        <h4>Características Principales:</h4>
+                        <ul>
+                            <li><strong>T-SQL:</strong> Extensión de Microsoft del SQL estándar</li>
+                            <li><strong>SSMS:</strong> SQL Server Management Studio</li>
+                            <li><strong>Integration Services:</strong> SSIS para ETL</li>
+                            <li><strong>Reporting Services:</strong> SSRS para reportes</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>💡 ¿Sabías qué?</strong>
+                            <p>SQL Server es usado por miles de empresas Fortune 500 para manejar datos críticos de negocio.</p>
+                        </div>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema1-2">
+                    <h3>🔧 Instalación de SQL Server</h3>
+                    <div class="content-body">
+                        <h4>En Windows:</h4>
+                        <ol>
+                            <li>Descarga SQL Server Express desde microsoft.com</li>
+                            <li>Descarga SSMS (SQL Server Management Studio)</li>
+                            <li>Ejecuta el instalador</li>
+                            <li>Selecciona "Basic" installation</li>
+                        </ol>
+                        <h4>Verificar instalación:</h4>
+                        <pre><code>-- Conectar desde SSMS
+-- Server: localhost\SQLEXPRESS
+-- Authentication: Windows Authentication</code></pre>
+                        <h4>Linux (Docker):</h4>
+                        <pre><code>docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=TuPassword123" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema1-3">
+                    <h3>📦 Conceptos Básicos</h3>
+                    <div class="content-body">
+                        <h4>Crear Base de Datos:</h4>
+                        <pre><code>CREATE DATABASE MiEmpresa;
+GO
+USE MiEmpresa;
+GO</code></pre>
+                        <h4>Crear Tabla:</h4>
+                        <pre><code>CREATE TABLE Empleados (
+    EmpleadoID INT PRIMARY KEY IDENTITY(1,1),
+    Nombre NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(255) UNIQUE,
+    Salario DECIMAL(10,2),
+    FechaContratacion DATE DEFAULT GETDATE()
+);</code></pre>
+                        <h4>Tipos de Datos:</h4>
+                        <ul>
+                            <li><strong>INT:</strong> Números enteros</li>
+                            <li><strong>NVARCHAR(n):</strong> Texto Unicode</li>
+                            <li><strong>DECIMAL(m,n):</strong> Números decimales</li>
+                            <li><strong>DATETIME:</strong> Fecha y hora</li>
+                        </ul>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema2-1">
+                    <h3>💻 Consultas T-SQL</h3>
+                    <div class="content-body">
+                        <h4>SELECT Básico:</h4>
+                        <pre><code>SELECT * FROM Empleados;
+SELECT Nombre, Salario FROM Empleados WHERE Salario > 50000;
+SELECT COUNT(*) as Total FROM Empleados;</code></pre>
+                        <h4>JOINs:</h4>
+                        <pre><code>-- INNER JOIN
+SELECT e.Nombre, d.NombreDepartamento
+FROM Empleados e
+INNER JOIN Departamentos d ON e.DepartamentoID = d.DepartamentoID;
+
+-- LEFT JOIN
+SELECT e.Nombre, d.NombreDepartamento
+FROM Empleados e
+LEFT JOIN Departamentos d ON e.DepartamentoID = d.DepartamentoID;</code></pre>
+                        <h4>Agregaciones:</h4>
+                        <pre><code>SELECT DepartamentoID, AVG(Salario) as Promedio
+FROM Empleados
+GROUP BY DepartamentoID
+HAVING AVG(Salario) > 50000;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema2-2">
+                    <h3>✅ Buenas Prácticas</h3>
+                    <div class="content-body">
+                        <h4>Índices:</h4>
+                        <pre><code>-- Crear índice
+CREATE INDEX IX_Empleados_Email ON Empleados(Email);
+
+-- Índice único
+CREATE UNIQUE INDEX IX_Empleados_Email_Unique ON Empleados(Email);</code></pre>
+                        <h4>Vistas:</h4>
+                        <pre><code>CREATE VIEW VistaEmpleados AS
+SELECT e.Nombre, d.NombreDepartamento
+FROM Empleados e
+JOIN Departamentos d ON e.DepartamentoID = d.DepartamentoID;</code></pre>
+                        <h4>Execution Plan:</h4>
+                        <pre><code>SET STATISTICS IO ON;
+SET STATISTICS TIME ON;
+SELECT * FROM Empleados WHERE Email = 'test@email.com';</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema3-1">
+                    <h3>🚀 Stored Procedures y Triggers</h3>
+                    <div class="content-body">
+                        <h4>Stored Procedure:</h4>
+                        <pre><code>CREATE PROCEDURE ObtenerEmpleados
+AS
+BEGIN
+    SELECT * FROM Empleados;
+END;
+
+-- Ejecutar
+EXEC ObtenerEmpleados;</code></pre>
+                        <h4>Trigger:</h4>
+                        <pre><code>CREATE TRIGGER trg_ActualizarFecha
+ON Empleados
+AFTER UPDATE
+AS
+BEGIN
+    PRINT 'Empleado actualizado';
+END;</code></pre>
+                        <h4>Transacciones:</h4>
+                        <pre><code>BEGIN TRANSACTION;
+BEGIN TRY
+    UPDATE Cuenta SET Saldo = Saldo - 100 WHERE Id = 1;
+    UPDATE Cuenta SET Saldo = Saldo + 100 WHERE Id = 2;
+    COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+    ROLLBACK TRANSACTION;
+END CATCH;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema3-2">
+                    <h3>📋 Proyecto Final</h3>
+                    <div class="content-body">
+                        <p>Desarrolla una base de datos empresarial completa:</p>
+                        <ol>
+                            <li>Diseñar modelo entidad-relación</li>
+                            <li>Crear tablas con restricciones</li>
+                            <li>Implementar stored procedures</li>
+                            <li>Crear triggers para auditoría</li>
+                            <li>Configurar índices estratégicos</li>
+                            <li>Implementar backup automático</li>
+                        </ol>
+                        <div class="info-box">
+                            <strong>💡 Proyecto sugerido:</strong>
+                            <p>Crea una base de datos para sistema de ventas con clientes, productos, pedidos y facturas.</p>
+                        </div>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
                 </div>
             </div>
         </div>
