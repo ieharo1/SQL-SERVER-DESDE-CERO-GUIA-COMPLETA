@@ -131,63 +131,57 @@
     </section>
 
     <!-- Temas -->
-    <section id="temas" class="section">
+    <section id="temas" class="topics">
         <div class="container">
-            <h2>Contenido del Curso</h2>
+            <h2>📖 Temas del Curso</h2>
+            <p class="topics-intro">Haz clic en cualquier tema para ver el contenido detallado</p>
+            
             <div class="topics-grid">
-                <div class="topic-card" data-topic="1">
-                    <div class="topic-number">01</div>
-                    <div class="topic-icon">📌</div>
-                    <h3>Introducción</h3>
-                    <p>Conceptos básicos de SQL Server, instalación y configuración inicial.</p>
-                    <a href="#tema1-1" class="topic-link">Ver tema →</a>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="topic-icon">🗄️</span>
+                        <h3>Módulo 1: Fundamentos</h3>
+                    </div>
+                    <ul class="topic-list">
+                        <li><a href="#tema1-1">Introducción a SQL Server</a></li>
+                        <li><a href="#tema1-2">Instalación</a></li>
+                        <li><a href="#tema1-3">Conceptos básicos</a></li>
+                        <li><a href="#tema1-4">Bases de Datos y Tablas</a></li>
+                    </ul>
+                    <a href="#tema1-1" class="btn-topic">Ver tema →</a>
                 </div>
-                <div class="topic-card" data-topic="2">
-                    <div class="topic-number">02</div>
-                    <div class="topic-icon">⚙️</div>
-                    <h3>Instalación</h3>
-                    <p>Instalación de SQL Server Express y SSMS en Windows.</p>
-                    <a href="#tema1-2" class="topic-link">Ver tema →</a>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="topic-icon">⚙️</span>
+                        <h3>Módulo 2: Intermedio</h3>
+                    </div>
+                    <ul class="topic-list">
+                        <li><a href="#tema2-1">Consultas T-SQL</a></li>
+                        <li><a href="#tema2-2">Buenas prácticas</a></li>
+                        <li><a href="#tema2-3">Procedimientos y Triggers</a></li>
+                        <li><a href="#tema2-4">Transacciones y Control</a></li>
+                    </ul>
+                    <a href="#tema2-1" class="btn-topic">Ver tema →</a>
                 </div>
-                <div class="topic-card" data-topic="3">
-                    <div class="topic-number">03</div>
-                    <div class="topic-icon">📦</div>
-                    <h3>Conceptos básicos</h3>
-                    <p>Creación de bases de datos, tablas y tipos de datos.</p>
-                    <a href="#tema1-3" class="topic-link">Ver tema →</a>
-                </div>
-                <div class="topic-card" data-topic="4">
-                    <div class="topic-number">04</div>
-                    <div class="topic-icon">💻</div>
-                    <h3>Consultas T-SQL</h3>
-                    <p>SELECT, INSERT, UPDATE, DELETE y funciones de agregación.</p>
-                    <a href="#tema2-1" class="topic-link">Ver tema →</a>
-                </div>
-                <div class="topic-card" data-topic="5">
-                    <div class="topic-number">05</div>
-                    <div class="topic-icon">✅</div>
-                    <h3>Buenas prácticas</h3>
-                    <p>Índices, optimización y diseño de esquemas eficientes.</p>
-                    <a href="#tema2-2" class="topic-link">Ver tema →</a>
-                </div>
-                <div class="topic-card" data-topic="6">
-                    <div class="topic-number">06</div>
-                    <div class="topic-icon">🚀</div>
-                    <h3>Casos reales</h3>
-                    <p>Stored procedures, triggers y transacciones.</p>
-                    <a href="#tema3-1" class="topic-link">Ver tema →</a>
-                </div>
-                <div class="topic-card" data-topic="7">
-                    <div class="topic-number">07</div>
-                    <div class="topic-icon">📋</div>
-                    <h3>Proyecto final</h3>
-                    <p>Base de datos completa para aplicación empresarial.</p>
-                    <a href="#tema3-2" class="topic-link">Ver tema →</a>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="topic-icon">🚀</span>
+                        <h3>Módulo 3: Avanzado</h3>
+                    </div>
+                    <ul class="topic-list">
+                        <li><a href="#tema3-1">Casos reales</a></li>
+                        <li><a href="#tema3-2">Proyecto final</a></li>
+                        <li><a href="#tema3-3">Optimización y Tuning</a></li>
+                        <li><a href="#tema3-4">Alta Disponibilidad</a></li>
+                    </ul>
+                    <a href="#tema3-1" class="btn-topic">Ver tema →</a>
                 </div>
             </div>
 
             <!-- Contenido Detallado de Temas -->
-            <div class="topic-content-container">
+            <div class="topic-content">
                 <div class="content-detail" id="tema1-1">
                     <h3>📊 Introducción a SQL Server</h3>
                     <div class="content-body">
@@ -357,6 +351,204 @@ END CATCH;</code></pre>
                     </div>
                     <a href="#temas" class="btn btn-back">← Volver a temas</a>
                 </div>
+                <div class="content-detail" id="tema1-4">
+                    <h3>💾 Backup, Restore y SQL Server Management Studio</h3>
+                    <div class="content-body">
+                        <h4>Backup con T-SQL:</h4>
+                        <pre><code>-- Backup completo
+BACKUP DATABASE MiEmpresa
+TO DISK = 'C:\Backups\MiEmpresa_Full.bak'
+WITH COMPRESSION, CHECKSUM;
+
+-- Backup de transaction log
+BACKUP LOG MiEmpresa
+TO DISK = 'C:\Backups\MiEmpresa_Log.bak';</code></pre>
+                        <h4>Restore:</h4>
+                        <pre><code>-- Restore completo
+RESTORE DATABASE MiEmpresa
+FROM DISK = 'C:\Backups\MiEmpresa_Full.bak'
+WITH REPLACE;
+
+-- Restore con move
+RESTORE DATABASE MiEmpresa
+FROM DISK = 'C:\Backups\MiEmpresa_Full.bak'
+WITH MOVE 'MiEmpresa_Data' TO 'D:\Data\MiEmpresa.mdf',
+     MOVE 'MiEmpresa_Log' TO 'E:\Logs\MiEmpresa_log.ldf';</code></pre>
+                        <h4>SSMS (SQL Server Management Studio):</h4>
+                        <ul>
+                            <li>Diseño visual de bases de datos</li>
+                            <li>Editor de queries con IntelliSense</li>
+                            <li>Plan de ejecución visual</li>
+                            <li>Gestión de jobs del SQL Agent</li>
+                            <li>Import/Export de datos</li>
+                        </ul>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema2-3">
+                    <h3>🔐 Transacciones y Control de Concurrencia</h3>
+                    <div class="content-body">
+                        <h4>Transacciones:</h4>
+                        <pre><code>BEGIN TRANSACTION;
+
+UPDATE Cuenta SET Saldo = Saldo - 1000 WHERE Id = 1;
+UPDATE Cuenta SET Saldo = Saldo + 1000 WHERE Id = 2;
+
+-- Verificar
+SELECT * FROM Cuenta WHERE Id IN (1, 2);
+
+-- Confirmar o revertir
+COMMIT TRANSACTION;
+-- o ROLLBACK TRANSACTION;</code></pre>
+                        <h4>TRY...CATCH:</h4>
+                        <pre><code>BEGIN TRY
+    BEGIN TRANSACTION;
+    
+    UPDATE Inventario SET Cantidad = Cantidad - 5 WHERE ProductoId = 101;
+    INSERT INTO Pedidos (ProductoId, Cantidad) VALUES (101, 5);
+    
+    COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+    ROLLBACK TRANSACTION;
+    PRINT 'Error: ' + ERROR_MESSAGE();
+END CATCH;</code></pre>
+                        <h4>Isolation Levels:</h4>
+                        <pre><code>-- Ver nivel actual
+DBCC USEROPTIONS;
+
+-- Cambiar nivel
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+-- Niveles: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SNAPSHOT, SERIALIZABLE</code></pre>
+                        <h4>Locking Hints:</h4>
+                        <pre><code>SELECT * FROM Empleados WITH (NOLOCK);
+SELECT * FROM Inventario WITH (TABLOCK);</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema2-4">
+                    <h3>📊 Subconsultas y CTEs</h3>
+                    <div class="content-body">
+                        <h4>Subconsultas:</h4>
+                        <pre><code>-- Escalar
+SELECT Nombre, Salario,
+    (SELECT AVG(Salario) FROM Empleados) AS Promedio
+FROM Empleados;
+
+-- En WHERE
+SELECT Nombre FROM Empleados
+WHERE Salario > (SELECT AVG(Salario) FROM Empleados);</code></pre>
+                        <h4>CTE (Common Table Expression):</h4>
+                        <pre><code>;WITH DeptStats AS (
+    SELECT DepartamentoID, AVG(Salario) AS Promedio
+    FROM Empleados
+    GROUP BY DepartamentoID
+)
+SELECT e.Nombre, e.Salario, d.Promedio
+FROM Empleados e
+JOIN DeptStats d ON e.DepartamentoID = d.DepartamentoID
+WHERE e.Salario > d.Promedio;</code></pre>
+                        <h4>CTE Recursivo:</h4>
+                        <pre><code>;WITH Organigrama AS (
+    SELECT Id, Nombre, ManagerId, 1 AS Nivel
+    FROM Empleados WHERE ManagerId IS NULL
+    
+    UNION ALL
+    
+    SELECT e.Id, e.Nombre, e.ManagerId, o.Nivel + 1
+    FROM Empleados e
+    JOIN Organigrama o ON e.ManagerId = o.Id
+)
+SELECT * FROM Organigrama ORDER BY Nivel;</code></pre>
+                        <h4>UNION y UNION ALL:</h4>
+                        <pre><code>SELECT Nombre FROM Empleados2023
+UNION
+SELECT Nombre FROM Empleados2024;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema3-3">
+                    <h3>🧩 Functions y Functions Avanzadas</h3>
+                    <div class="content-body">
+                        <h4>Scalar Functions:</h4>
+                        <pre><code>CREATE FUNCTION dbo.CalcularIVA(@Precio DECIMAL(10,2))
+RETURNS DECIMAL(10,2)
+AS
+BEGIN
+    RETURN @Precio * 0.16;
+END;
+
+-- Uso
+SELECT Nombre, Precio, dbo.CalcularIVA(Precio) AS IVA FROM Productos;</code></pre>
+                        <h4>Table-Valued Functions:</h4>
+                        <pre><code>CREATE FUNCTION dbo.ObtenerEmpleadosDept(@DeptID INT)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT * FROM Empleados WHERE DepartamentoID = @DeptID
+);
+
+-- Uso
+SELECT * FROM dbo.ObtenerEmpleadosDept(5);</code></pre>
+                        <h4>Functions del Sistema:</h4>
+                        <pre><code>GETDATE()          -- Fecha actual
+DATEADD(day, 5, GETDATE())  -- Agregar días
+DATEDIFF(day, fecha1, fecha2)  -- Diferencia en días
+STRING_AGG(nombre, ', ')  -- Concatenar
+IIF(condicion, valor1, valor2)  -- Condicional</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema3-4">
+                    <h3>🚀 SQL Server Agent y Automatización</h3>
+                    <div class="content-body">
+                        <h4>Jobs:</h4>
+                        <pre><code>-- Crear job
+EXEC msdb.dbo.sp_add_job
+    @job_name = 'BackupDiario',
+    @description = 'Backup diario de la base';
+
+-- Agregar step
+EXEC msdb.dbo.sp_add_jobstep
+    @job_name = 'BackupDiario',
+    @step_name = 'Ejecutar Backup',
+    @command = 'BACKUP DATABASE MiEmpresa TO DISK = ''...'';';
+
+-- Schedule
+EXEC msdb.dbo.sp_add_jobschedule
+    @job_name = 'BackupDiario',
+    @name = 'DiarioAMedianoche',
+    @freq_type = 4,
+    @freq_interval = 1,
+    @active_start_time = 0;</code></pre>
+                        <h4>Alerts:</h4>
+                        <pre><code>-- Crear alert para errores
+EXEC msdb.dbo.sp_add_alert
+    @name = 'ErrorAlert',
+    @message_id = 50001,
+    @severity = 16,
+    @enabled = 1;</code></pre>
+                        <h4>Database Mail:</h4>
+                        <pre><code>-- Configurar email
+EXEC sp_configure 'show advanced', 1;
+RECONFIGURE;
+EXEC sp_MSsetalertinfo;
+
+-- Enviar email desde procedure
+EXEC msdb.dbo.sp_send_dbmail
+    @profile_name = 'AdminProfile',
+    @recipients = 'admin@empresa.com',
+    @subject = 'Reporte Diario',
+    @body = 'El backup se completó exitosamente.';</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
             </div>
         </div>
     </section>
@@ -404,43 +596,23 @@ INNER JOIN Departamentos d ON e.DepartamentoID = d.DepartamentoID;</code></pre>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>SQL Server desde Cero</h4>
-                    <p>Guía educativa completa para aprender SQL Server desde los fundamentos hasta conceptos avanzados.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#que-es">¿Qué es?</a></li>
-                        <li><a href="#temas">Temas</a></li>
-                        <li><a href="#ejemplos">Ejemplos</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Recursos</h4>
-                    <ul>
-                        <li><a href="docs/">Documentación</a></li>
-                        <li><a href="examples/">Ejemplos</a></li>
-                        <li><a href="https://docs.microsoft.com/sql/" target="_blank">Docs Oficiales</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>👨‍💻 Desarrollado por <strong>Isaac Esteban Haro Torres</strong></p>
-                <p class="developer-info">Ingeniero en Sistemas · Full Stack · Automatización · Data</p>
-                <div class="developer-contact">
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>👨‍💻 Desarrollado por Isaac Esteban Haro Torres</h2>
+                <p class="contact-title">Ingeniero en Sistemas · Full Stack · Automatización · Data</p>
+                <div class="contact-info">
                     <p>📧 Email: <a href="mailto:zackharo1@gmail.com">zackharo1@gmail.com</a></p>
                     <p>📱 WhatsApp: 098805517</p>
                     <p>💻 GitHub: <a href="https://github.com/ieharo1" target="_blank">github.com/ieharo1</a></p>
                     <p>🌐 Portafolio: <a href="https://ieharo1.github.io/portafolio-isaac.haro/" target="_blank">ieharo1.github.io/portafolio-isaac.haro/</a></p>
                 </div>
-                <p class="copyright">&copy; 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.</p>
             </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.</p>
         </div>
     </footer>
 
